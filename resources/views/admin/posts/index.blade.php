@@ -10,6 +10,8 @@
     @elseif(Session('post-created-message'))
     <div class="alert alert-success">{{Session::get('post-created-message')}}</div>
 
+    @elseif(Session::get('post-updated-message'))
+    <div class="alert alert-success">{{Session::get('post-updated-message')}}</div>
     @endif
 
     <!-- DataTales Example -->
