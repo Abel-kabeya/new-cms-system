@@ -23,9 +23,6 @@ class UserController extends Controller
         return view('admin.users.profile', [
             'user' => $user,
             'roles' => Role::all()
-
-
-
         ]);
     }
 
@@ -48,6 +45,19 @@ class UserController extends Controller
 
         return back();
     }
+
+    public function attach(User $user)
+    {
+        $user->roles()->attach(request('role'));
+        return back();
+    }
+
+    public function detach(User $user)
+    {
+        $user->roles()->detach(request('role'));
+        return back();
+    }
+
 
     public function destroy(User $user)
     {
