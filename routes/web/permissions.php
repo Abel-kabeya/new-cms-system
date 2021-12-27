@@ -9,3 +9,5 @@ Route::post('/permissions', 'PermissionController@store')->name('permissions.sto
 Route::delete('/permissions/{permission}/destroy', 'PermissionController@destroy')->name('permissions.destroy');
 
 Route::get('/permissions/{permission}/edit', 'PermissionController@edit')->name('permissions.edit');
+
+Route::put('/permissions/{permission}/update', 'PermissionController@update')->name('permissions.update');

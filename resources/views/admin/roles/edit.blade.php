@@ -8,12 +8,6 @@
     </div>
     @endif
 
-    <div class="row">
-        <div class="col-sm-6">
-
-        </div>
-    </div>
-
     <div class="col-sm-6">
 
         <h1>Edit Role: {{$role->name}}</h1>
