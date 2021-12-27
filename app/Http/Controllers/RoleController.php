@@ -27,7 +27,7 @@ class RoleController extends Controller
         return view('admin.roles.edit', [
             'role' => $role,
             'permissions' => Permission::all()
-            ]);
+        ]);
     }
 
     public function store()
@@ -56,6 +56,22 @@ class RoleController extends Controller
         } else {
             session()->flash('role-updated', 'Nothing has been updated');
         }
+
+        return back();
+    }
+
+    public function attach_permission(Role $role)
+    {
+
+        $role->permissions()->attach(request('permission'));
+
+        return back();
+    }
+
+    public function detach_permission(Role $role)
+    {
+
+        $role->permissions()->detach(request('permission'));
 
         return back();
     }
